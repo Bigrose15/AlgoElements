@@ -1,0 +1,68 @@
+//IN JS SYNTAX:
+// let sentence = "The algorithm sentence.";
+// let charCount = 0;
+// let wordCount = 0;
+// let vowelCount = 0;
+
+// for (let i = 0; i < sentence.length; i++) {
+//   //loop through the sentence string to count the characters, words and vowels in the sentence string
+//   if (sentence[i] !== " ") {
+//     //if the character is not a space then it is a character so increment the charCount by 1
+//     charCount++;
+//   }
+//   if (i === 0 || sentence[i - 1] === " ") {
+//     //if the character is the first character or the previous character is a space then it is a word so increment the wordCount by 1
+//     wordCount++;
+//   }
+//   if ("aeiou".includes(sentence[i].toLowerCase())) {
+//     //if the character is a vowel then increment the vowelCount by 1
+//     vowelCount++;
+//   }
+// }
+
+// console.log("Character Count:", charCount);
+// console.log("Word Count:", wordCount);
+// console.log("Vowel Count:", vowelCount);
+
+
+
+//IN ALGORITHM SYNTAX:
+
+ALGORITHM read_a_sentence
+VAR
+    sentence: STRING
+    sentence_length:INTEGER:=0
+    spaces_count: INTEGER:=0
+    word_count: INTEGER:=0
+    vowel_count: INTEGER:=0
+BEGIN
+    // Get sentence length
+    Read(sentence)
+    sentence_length= sentence.length
+
+    // Count the number of words
+
+    FOR i FROM 0 TO sentence.length-1 STEP 1 DO
+        IF (sentence[i]=" ") THEN
+            spaces_count:= spaces_count+1
+        END_IF
+    END_FOR
+        word_count:= spaces_count+1
+
+
+    FOR i FROM 0 TO sentence.length-1 STEP 1 DO
+        IF (sentence[i]="a" or sentence[i]="e" or sentence[i]="i" or sentence[i]="o" or sentence[i]="u" ) THEN
+            vowel_count:=vowel_count+1
+        END_IF
+
+    END_FOR
+
+
+    Write (sentence_length)
+    Write (word_count)
+    Write (vowel_count)
+
+END
+
+
+
